@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500&display=swap');
+@import url('header.css');
+@import url('about.css');
+@import url('portfolio.css');
+@import url('contact.css');
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--theme-blue1);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-contrast);
+  }
+
+:root {
+    --theme-blue: #010233;
+    --theme-blue1: #2724d1;
+    --theme-contrast: #00a1ff;
+}
+
+/* set default  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--theme-blue);
+    background-image: url("../imgs/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    animation: bodyColor 10s ease-in-out infinite;
+    transition: 1s;
+}
+
+@keyframes bodyColor {
+    0% {
+        background-color: var(--theme-blue);
+    }
+
+    50% {
+        background-color: var(--theme-blue1);
+    }
+}
+a {
+    color: var(--theme-contrast);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--theme-contrast-1);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,p,
+li {
+    color: #fff;
+}
+
+.nowrap
+{
+    white-space: nowrap;
+}
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 140px;
+    bottom: 100%;
+    opacity: 0;
+    transition: ease-in-out 0.4s;
+    z-index: 2;
+}
+
+section.section-show {
+    top: 100px;
+    bottom: auto;
+    opacity: 1;
+    padding-bottom: 45px;
+}
+
+section .container {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    section {
+        top: 120px;
+    }
+
+    section.section-show {
+        top: 80px;
+    }
+}
+
+.section-title h2 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    font-family: "Poppins", sans-serif;
+}
+
+.section-title h2::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background: var(--theme-contrast);
+    margin: 4px 10px;
+}
+
+.section-title p {
+    margin: 0;
+    margin: -15px 0 15px 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+}
+
+/* credit */
+.credits
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #ffffff38;
+}
+.credits span
+{
+    color:var(--theme-contrast);
+    opacity: .7;
+}
+
+
+
+/* custom classes */
+.msmadi-font {
+    font-family: 'Ms Madi', cursive;
+
+}
+.code-font{
+    font-family: 'Source Code Pro', monospace;
+}
+
+.btn-theme {
+    color: #000;
+    background-color: var(--theme-contrast);
+    border-color: var(--theme-contrast);
+}
